@@ -247,7 +247,7 @@ function CurrentJobOpenings() {
             id="drive-link"
             className="w-full p-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="url"
-            placeholder="Enter Google Drive Link"
+            placeholder="Enter Resume Drive Link"
             value={driveLink}
             onChange={handleDriveLinkChange}
             required

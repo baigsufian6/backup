@@ -12,6 +12,7 @@ import rohan from './images/rohans.png';
 import video from './images/vids2.mp4';
 import rename from './images/rename.jpg'
 import ChatBot from './Chatbot';  // Ensure this path is correct
+import GoogleReviews from './Getting';
 import './Main.css';
 
 // ServiceCard component
@@ -346,6 +347,8 @@ const Home = React.memo(() => {
       </section> */}
 
       {/* Contact Section */}
+      <GoogleReviews />
+
       <section className="xpat-contact">
         <div className="xpat-contact-content" id="contactus">
           <h2>Contact Us</h2>

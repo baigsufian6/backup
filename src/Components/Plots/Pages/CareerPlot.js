@@ -220,7 +220,7 @@ const Career = () => {
                   <input
                     type="url"
                     name="driveLink"
-                    placeholder="Enter Google Drive Link"
+                    placeholder="Enter Resume Drive Link"
                     value={driveLink}
                     onChange={handleDriveLinkChange}
                     required
