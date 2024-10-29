@@ -19,7 +19,7 @@ const GoogleMapsReviewsDisplay = () => {
       console.log(data);
 
       if (data.result && data.result.reviews) {
-        const latestReviews = data.result.reviews.slice(0, 5); // Get top 6 reviews
+        const latestReviews = data.result.reviews.slice(0, 3); // Get top 6 reviews
         console.log("Latest Reviews Count:", latestReviews.length); // Log the count of latest reviews
         setReviews(latestReviews);
         setLastFetchedReviewCount(latestReviews.length);
