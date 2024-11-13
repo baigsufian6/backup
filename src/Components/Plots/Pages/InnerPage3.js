@@ -1,86 +1,109 @@
-import { React, useEffect } from 'react';
-import ImageCarousel from './Imagecorosel3'; // Carousel component for project images
-import projectBanner from '../Assets/rohanlogo.png'; // Banner image path
-import locationMap from '../Assets/new2.png'; // Location map image path
-import './project1.css'; // Import the CSS file for styling
+import {React,useEffect} from "react";
+import ImageCarousel from "./Imagecorosel3"; // Ensure this is the path to your carousel component
 
-const Project1 = () => {
+const ProjectDetails = () => {
+
   useEffect(() => {
-    // Scroll to the top of the page on component mount
+    // Scroll to the top of the page
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="project-container">
-      
-      {/* Project Banner */}
-      <div className="banner-container">
-        <img src={projectBanner} alt="Project Banner" className="banner-image" />
-      </div>
+    <div className="bg-blue-100 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white shadow-md rounded-lg p-6 mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500 ease-out">
 
-      {/* Project Introduction */}
-      <div className="details-container">
-        <h1 className="company-name">ROHAN INFRA BUILDERRS AND DEVELOPERRS</h1>
-        <h2 className="project-name">Presenting "ROHAN AROHANA SERENITY"</h2>
-        <p className="project-subtitle">A luxurious residential project located on Mysore Road, designed for those who appreciate elegance and exclusivity.</p>
-      </div>
+        {/* Project Header */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-bold text-blue-900 animate-fade-in-down">Rohan Infra Builders and Developers</h1>
+          <h2 className="text-2xl font-semibold text-gray-800 mt-4 animate-fade-in-down">Introducing Our Latest Project</h2>
+          <h3 className="text-xl font-bold text-blue-800 mt-2 animate-fade-in-down">RRR - Rohan Royal Residency</h3>
+        </div>
 
-      {/* Project Details */}
-      <div className="section project-details-section">
-        <h3 className="section-title">Project Details</h3>
-        <p className="detail-item"><strong>Location:</strong> Ramohalli, Mysore Road</p>
-        <p className="detail-item"><strong>Price:</strong> Starting at ₹5290/sqft</p>
-        <p className="detail-item"><strong>Total Plots:</strong> 86</p>
-        <p className="detail-item"><strong>Total Area:</strong> 5 acres 33 guntas</p>
-        <p className="detail-item"><strong>Dimensions:</strong> 20x30, 30x40, 30x50</p>
-        <p className="detail-item"><strong>Approval:</strong> BDA Approved</p>
-        <p className="detail-item"><strong>Khata:</strong> A Khata</p>
-        <p className="detail-item"><strong>RERA Registration:</strong> Registered</p>
-      </div>
+        {/* Image Carousel */}
+        <div className="mb-6 animate-fade-in-up">
+          <ImageCarousel />
+        </div>
 
-      {/* Accessibility & Connectivity */}
-      <div className="section connectivity-section">
-        <h3 className="section-title">Accessibility & Connectivity</h3>
-        <ul className="connectivity-list">
-          <li>10 min from Mysore Road</li>
-          <li>15 min from Challaghatta Metro Station</li>
-          <li>Close proximity to RR Medical and Engineering College</li>
-          <li>Nearby key areas: Kengeri, RR Nagar, Nagarbhavi, Vijaynagar</li>
-        </ul>
-      </div>
+        {/* Project Details Section */}
+        <div className="animate-fade-in-up">
+          <h3 className="text-xl font-semibold text-gray-700 mb-4">Premium Plots for Sale</h3>
+          <p className="text-gray-600 mb-2"><strong>Location:</strong> Chandrappa Circle, Near Big Banyan Tree</p>
+          <p className="text-gray-600 mb-2"><strong>Special Launch Offer:</strong> ₹2077/- per sqft (First 15 Plots Only!)</p>
+          <p className="text-gray-600 mb-2"><strong>Booking Amount:</strong> ₹1 Lakh per Plot</p>
+          <p className="text-gray-600 mb-2"><strong>Total Area:</strong> 1 Acre</p>
+          <p className="text-gray-600 mb-2"><strong>Total Plots:</strong> 35</p>
+        </div>
 
-      {/* Amenities Section */}
-      <div className="section amenities-section">
-        <h3 className="section-title">Amenities</h3>
-        <ul className="amenities-list">
-          <li>Secure Gated Community with 40 ft wide roads</li>
-          <li>Overhead Tank & Borewell</li>
-          <li>Amphitheater and Multipurpose Court</li>
-          <li>Children's Play Area, Butterfly Park, and Senior Citizen Park</li>
-          <li>Underground Electricity System</li>
-          <li>Avenue Plantation for a green, serene environment</li>
-        </ul>
-      </div>
+        {/* Plot Dimensions */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Plot Dimensions</h4>
+          <ul className="list-disc list-inside text-gray-600 mt-2">
+            <li className="hover:text-blue-600 transition-colors duration-300">30x40 (1200 sq.ft)</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Odd Sites Available</li>
+          </ul>
+        </div>
 
-      {/* Image Carousel for Location Map and Images */}
-      <div className="map-section">
-        <ImageCarousel />
-      </div>
+        {/* Amenities */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Amenities</h4>
+          <ul className="list-disc list-inside text-gray-600 mt-2">
+            <li className="hover:text-blue-600 transition-colors duration-300">Gated Community with 10ft Compound Wall</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">White Top Road</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Water Connection (CMC & Borewell)</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Underground Sanitary Connections</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Overhead Electricity</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Street Lights</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">24/7 Security</li>
+          </ul>
+        </div>
 
-      {/* Payment and Registration Details */}
-      <div className="section payment-section">
-        <h3 className="section-title">Payment and Registration</h3>
-        <p className="payment-info"><strong>Payment Options:</strong> Cash, Cheque, UPI</p>
-        <p className="payment-info">Contact us for attractive offers and flexible payment plans.</p>
-      </div>
+        {/* Nearby Locations */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Nearby Locations</h4>
+          <ul className="list-disc list-inside text-gray-600 mt-2">
+            <li className="hover:text-blue-600 transition-colors duration-300">Big Banyan Tree: 2 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Chandrappa Circle: 500 M</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Manchanabele Dam: 5.5 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Saligrama Temple: 5 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Ruppi's Resort: 2 KM</li>
+          </ul>
+        </div>
 
-      {/* Contact Section */}
-      <div className="contact-section">
-        <h3 className="contact-title">Get in Touch Today for More Details!</h3>
-        <p className="contact-subtitle">Reserve your plot at "ROHAN AROHANA SERENITY" and be part of an exclusive community.</p>
+        {/* Nearby Schools & Colleges */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Nearby Schools & Colleges</h4>
+          <ul className="list-disc list-inside text-gray-600 mt-2">
+            <li className="hover:text-blue-600 transition-colors duration-300">Universal Group of Institutions: 4 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Sacred Group of Institutions: 3 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">GR International Public School: 5 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">East West College: 8 KM</li>
+          </ul>
+        </div>
+
+        {/* Nearby Hospitals */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Nearby Hospitals</h4>
+          <ul className="list-disc list-inside text-gray-600 mt-2">
+            <li className="hover:text-blue-600 transition-colors duration-300">Sri Sanjeevini Multispeciality Hospital: 5.5 KM</li>
+            <li className="hover:text-blue-600 transition-colors duration-300">Samraksha Hospital: 8.5 KM</li>
+          </ul>
+        </div>
+
+        {/* Registration & Payment Info */}
+        <div className="mt-6 animate-fade-in-up">
+          <h4 className="text-lg font-semibold text-gray-700">Ready for Registration & Construction</h4>
+          <p className="text-gray-600 mt-2"><strong>Bank Loan:</strong> Approved by all leading banks (up to 70% loan available)</p>
+          <p className="text-gray-600 mt-2"><strong>Payment Terms:</strong> Payments can be made via Cheque, Cash, or Online Transfer.</p>
+        </div>
+
+        {/* Contact Section */}
+        <div className="mt-6 text-center animate-fade-in-up">
+          <p className="text-xl font-semibold text-blue-700">For More Details</p>
+          <p className="text-lg text-gray-700">Contact us now!</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Project1;
+export default ProjectDetails;
