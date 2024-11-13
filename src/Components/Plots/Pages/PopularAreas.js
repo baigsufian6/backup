@@ -1,100 +1,77 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import area1 from '../Assets/new2.png';
 import area2 from '../Assets/new1.png';
 import area3 from '../Assets/new3.png';
 import area4 from '../Assets/new5.jpeg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './PopularAreas.css'; // Importing the CSS file
+import './PopularAreas.css';
 
-const PopularAreas = () => {
-    useEffect(() => {
-        AOS.init({
-            offset: 200,
-            duration: 800,
-            easing: 'ease-in-sine',
-            delay: 100,
-        });
-    }, []);
+const ProjectCards = () => {
+  const navigate = useNavigate();
+  
+  const cards = [
+    { image: area1, title: "Project 1", route: "/plots/InnerPage1" },
+    { image: area2, title: "Project 2", route: "/plots/InnerPage2" },
+    { image: area3, title: "Project 3", route: "/plots/InnerPage3" },
+    { image: area4, title: "Project 4", route: "/plots/InnerPage4" }
+  ];
 
-    const navigate = useNavigate();
-
-    return (
-        <div>
-            <section className="popular-areas-section">
-                <div id="top" className="popular-areas-top">
-                    <div className="bolo">
-                        <h1  className="popular-areas-title">LATEST PROJECTS</h1>
-                    </div>
-                    <div className="popular-areas-grid">
-                        {/* Area Card 1 */}
-                        <div 
-                             
-                            style={{ backgroundImage: `url(${area1})` }}
-                            className="area-card"
-                            onClick={() => navigate('/plots/InnerPage1')}  // Ensure this route exists
-                        >
-                            <div className="overlay">
-                                <span className="overlay-text">Click to View</span>
-                            </div>
-                        </div>
-                        
-                        {/* Area Card 2 */}
-                        <div 
-                             
-                            style={{ backgroundImage: `url(${area2})` }}
-                            className="area-card"
-                            onClick={() => navigate('/plots/InnerPage2')}  // Ensure this route exists
-                        >
-                            <div className="overlay">
-                                <span className="overlay-text">Click to View</span>
-                            </div>
-                        </div>
-                        
-                        {/* Area Card 3 */}
-                        <div 
-                             
-                            style={{ backgroundImage: `url(${area3})` }}
-                            className="area-card"
-                            onClick={() => navigate('/plots/InnerPage3')}  // Ensure this route exists
-                        >
-                            <div className="overlay">
-                                <span className="overlay-text">Click to View</span>
-                            </div>
-                        </div>
-
-                        {/* Area Card 4 */}
-                        <div 
-                             
-                            style={{ backgroundImage: `url(${area4})` }}
-                            className="area-card"
-                            onClick={() => navigate('/plots/InnerPage4')}  // Ensure this route exists
-                        >
-                            <div className="overlay">
-                                <span className="overlay-text">Click to View</span>
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <div className="project-cards-container">
+      <div className="project-cards-content">
+        <h2 className="project-cards-title">LATEST PROJECTS</h2>
+        
+        <div className="project-cards-grid">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              onClick={() => navigate(card.route)}
+              className="project-card"
+              style={{
+                backgroundImage: `url(${card.image})`
+              }}
+            >
+              {/* Gradient Overlay */}
+              <div className="project-card-overlay" />
+              
+              {/* Animated Arrow Container */}
+              <div className="project-card-arrow-container">
+                <div className="project-card-arrow-circle">
+                  <ArrowRight 
+                    className="project-card-arrow-icon"
+                    size={24}
+                  />
                 </div>
                 
-                <div id="bottom" className="popular-areas-stats">
-                    <div data-aos="slide-up" data-aos-delay="200" className="stat-box">
-                        <h1 className="stat-number">52+</h1>
-                        <h1 className="stat-description">PROJECTS ARE SOLD OUT</h1>
-                    </div>
-                    <div data-aos="slide-up" data-aos-delay="200" className="stat-box">
-                        <h1 className="stat-number">2.5K+</h1>
-                        <h1 className="stat-description">CUSTOMERS SATISFACTION</h1>
-                    </div>
-                    <div data-aos="slide-up" data-aos-delay="200" className="stat-box">
-                        <h1 className="stat-number">7+</h1>
-                        <h1 className="stat-description">LATEST PROJECTS</h1>
-                    </div>
+                <div className="project-card-sliding-arrows">
+                  {[...Array(3)].map((_, i) => (
+                    <ArrowRight 
+                      key={i}
+                      className="project-card-sliding-arrow"
+                      size={20}
+                      style={{
+                        animation: `slideRight 1.5s ease-in-out ${i * 0.2}s infinite`
+                      }}
+                    />
+                  ))}
                 </div>
-            </section>
-        </div>
-    );
-}
+              </div>
 
-export default PopularAreas;
+              {/* Card Number */}
+              <div className="project-card-number">
+                <div className="project-card-number-circle">
+                  <span className="project-card-number-text">
+                    {index + 1}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCards;
