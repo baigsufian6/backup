@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Image1 from '../Assets/new1.png';
-import Image2 from '../Assets/new2.png';
-import Image3 from '../Assets/new3.png';
 import Image4 from '../Assets/new4.jpeg';
 import Image5 from '../Assets/new5.jpeg';
 import Image6 from '../Assets/new6.jpeg';
@@ -14,11 +11,8 @@ import Image11 from '../Assets/new11.jpeg';
 const ImageCarousel5 = () => {
   // Array of image URLs
   const images = [
-    Image1,
-    Image2,
-    Image3,
-    Image4,
     Image5,
+    Image4,
     Image6,
     Image7,
     Image8,

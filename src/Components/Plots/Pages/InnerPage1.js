@@ -1,20 +1,63 @@
-import {React,useEffect} from 'react';
-import ImageCarousel from './ImageCourosel'; // Assuming this component displays a carousel of images
-import projectBanner from '../Assets/rohanlogo.png'; // Example image path
-
+import { React, useEffect } from 'react';
+import ImageCarousel from './ImageCourosel';
+import projectBanner from '../Assets/rohanlogo.png';
 
 const Project1 = () => {
-
   useEffect(() => {
-    // Scroll to the top of the page
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const amenities = [
+    'Gated Community with 10-feet Compound Wall',
+    'White Top Road',
+    'Water Connection, CMC',
+    'Underground Sanitary Connections',
+    'Overhead Electricity & Tank',
+    'Street Lights',
+    '24/7 Security',
+    'Sewage System'
+  ];
+
+  const plotDimensions = [
+    '20x30 (600 sq. ft)',
+    '20x40 (800 sq. ft)',
+    '30x30 (900 sq. ft)',
+    '30x40 (1200 sq. ft)',
+    'ODD SITES'
+  ];
+
+  const nearbyLocations = [
+    'Christ School, BGS International School',
+    'ISS Sports Arena Cricket Ground - 4.5 Km (10 min)',
+    'BGS International Residential School & Cricket Stadium',
+    'Sri Adichunchanagiri Shaka Mutt & National Public Schools - 5.5 Km (12 min)',
+    'Guhantara Resorts - 6.0 Km (13 min)',
+    'Kanakapura Road - 7.5 Km (15 min)',
+    'Bangalore Mysore Expressway - 7.5 Km (15 min)',
+    'Rajarajeshwari Medical & Engineering College - 8.0 Km (15 min)',
+    'Art of Living Centre - 8.5 Km (17 min)',
+    'Metro Station, Challaghatta - 9.0 Km (18 min)',
+    'Christ University, Kengeri Campus - 9.5 Km (20 min)',
+    'NICE Road Toll Plaza (Kanakapura) - 11.5 Km (20 min)',
+    'Wonderla Dreamland - 14 Km (25 min)',
+    'Turahalli Forest - 12 Km (20 min)',
+    'Vivekananda Institute of Technology, Delhi Public School - 4.5 Km (11 min)',
+    'Jyothy Institute of Technology - 7.5 Km (15 min)',
+    'Aagara Lake View Point - 4.5 Km (11 min)',
+    'RNS Institute of Technology - 15 Km (25 min)',
+    'Eagleton The Golf Resort - 13 Km (20 min)'
+  ];
 
   return (
     <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-lg">
       {/* Project Banner */}
       <div className="mb-8 flex justify-center">
-        <img src={projectBanner} alt="Project Banner" className="w-auto h-32 object-contain" />
+        <img 
+          src={projectBanner} 
+          alt="Project Banner" 
+          className="w-auto h-32 object-contain"
+          loading="eager"
+        />
       </div>
 
       {/* Project Details */}
@@ -40,11 +83,9 @@ const Project1 = () => {
       <div className="mb-10">
         <h3 className="text-2xl font-semibold text-blue-900 mb-4">Plot Dimensions</h3>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>20x30 (600 sq. ft)</li>
-          <li>20x40 (800 sq. ft)</li>
-          <li>30x30 (900 sq. ft)</li>
-          <li>30x40 (1200 sq. ft)</li>
-          <li>ODD SITES</li>
+          {plotDimensions.map((dimension, index) => (
+            <li key={index}>{dimension}</li>
+          ))}
         </ul>
       </div>
 
@@ -52,14 +93,9 @@ const Project1 = () => {
       <div className="mb-10">
         <h3 className="text-2xl font-semibold text-blue-900 mb-4">Amenities</h3>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Gated Community with 10-feet Compound Wall</li>
-          <li>White Top Road</li>
-          <li>Water Connection, CMC</li>
-          <li>Underground Sanitary Connections</li>
-          <li>Overhead Electricity & Tank</li>
-          <li>Street Lights</li>
-          <li>24/7 Security</li>
-          <li>Sewage System</li>
+          {amenities.map((amenity, index) => (
+            <li key={index}>{amenity}</li>
+          ))}
         </ul>
       </div>
 
@@ -67,25 +103,9 @@ const Project1 = () => {
       <div className="mb-10">
         <h3 className="text-2xl font-semibold text-blue-900 mb-4">Nearby Locations</h3>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Christ School, BGS International School</li>
-          <li>ISS Sports Arena Cricket Ground - 4.5 Km (10 min)</li>
-          <li>BGS International Residential School & Cricket Stadium</li>
-          <li>Sri Adichunchanagiri Shaka Mutt & National Public Schools - 5.5 Km (12 min)</li>
-          <li>Guhantara Resorts - 6.0 Km (13 min)</li>
-          <li>Kanakapura Road - 7.5 Km (15 min)</li>
-          <li>Bangalore Mysore Expressway - 7.5 Km (15 min)</li>
-          <li>Rajarajeshwari Medical & Engineering College - 8.0 Km (15 min)</li>
-          <li>Art of Living Centre - 8.5 Km (17 min)</li>
-          <li>Metro Station, Challaghatta - 9.0 Km (18 min)</li>
-          <li>Christ University, Kengeri Campus - 9.5 Km (20 min)</li>
-          <li>NICE Road Toll Plaza (Kanakapura) - 11.5 Km (20 min)</li>
-          <li>Wonderla Dreamland - 14 Km (25 min)</li>
-          <li>Turahalli Forest - 12 Km (20 min)</li>
-          <li>Vivekananda Institute of Technology, Delhi Public School - 4.5 Km (11 min)</li>
-          <li>Jyothy Institute of Technology - 7.5 Km (15 min)</li>
-          <li>Aagara Lake View Point - 4.5 Km (11 min)</li>
-          <li>RNS Institute of Technology - 15 Km (25 min)</li>
-          <li>Eagleton The Golf Resort - 13 Km (20 min)</li>
+          {nearbyLocations.map((location, index) => (
+            <li key={index}>{location}</li>
+          ))}
         </ul>
       </div>
 

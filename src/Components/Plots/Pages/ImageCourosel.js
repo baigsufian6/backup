@@ -1,32 +1,20 @@
 import React, { useState } from "react";
-import Image1 from '../Assets/new1.png'
-import Image2 from '../Assets/new2.png';
-import Image3 from '../Assets/new3.png';
-import Image4 from '../Assets/new4.jpeg';
-import Image5 from '../Assets/new5.jpeg';
-import Image6 from '../Assets/new6.jpeg';
-import Image7 from '../Assets/new7.jpeg';
-import Image8 from '../Assets/new8.jpeg';
-import Image9 from '../Assets/new9.jpeg';
-import Image10 from '../Assets/new10.jpeg';
-import Image11 from '../Assets/new11.jpeg';
+import Image1 from '../Assets/new1.png';
+import Image6 from '../Assets/new2.png';
+import Image2 from '../Assets/new3.png';
+import Image3 from '../Assets/image3.png';
+import Image4 from '../Assets/image4.png';
+import Image5 from '../Assets/image5.png';
 
 const ImageCarousel = () => {
   // Array of image URLs
   const images = [
     Image1,
-    Image5,
     Image6,
     Image2,
     Image3,
     Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-    Image10,
-    Image11,
+    Image5
   ];
 
   // State to keep track of the current slide
@@ -47,23 +35,15 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto overflow-hidden">
+    <div className="relative w-full max-w-lg mx-auto overflow-hidden ">
       {/* Images */}
-      <div
-        className="flex transition-transform duration-500 ease-in-out transform"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+      <div className="flex transition-transform duration-500 ease-in-out transform" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full"
-            style={{
-              height: '800px',  // Set a fixed height
-              objectFit: 'cover', // Ensures image covers the entire container while maintaining aspect ratio
-              flex: '0 0 100%',
-            }}
           />
         ))}
       </div>
@@ -99,3 +79,5 @@ const ImageCarousel = () => {
 };
 
 export default ImageCarousel;
+
+

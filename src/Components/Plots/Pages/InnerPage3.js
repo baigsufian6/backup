@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react';
-import ImageCarousel from './ImageCourosel'; // Carousel component for project images
+import ImageCarousel from './Imagecorosel3'; // Carousel component for project images
 import projectBanner from '../Assets/rohanlogo.png'; // Banner image path
 import locationMap from '../Assets/new2.png'; // Location map image path
 import './project1.css'; // Import the CSS file for styling
