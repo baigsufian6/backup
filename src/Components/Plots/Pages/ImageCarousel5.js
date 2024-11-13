@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image1 from '../Assets/new1.png'
+import Image1 from '../Assets/new1.png';
 import Image2 from '../Assets/new2.png';
 import Image3 from '../Assets/new3.png';
 import Image4 from '../Assets/new4.jpeg';
@@ -11,12 +11,10 @@ import Image9 from '../Assets/new9.jpeg';
 import Image10 from '../Assets/new10.jpeg';
 import Image11 from '../Assets/new11.jpeg';
 
-const ImageCarousel = () => {
+const ImageCarousel5 = () => {
   // Array of image URLs
   const images = [
     Image1,
-    Image5,
-    Image6,
     Image2,
     Image3,
     Image4,
@@ -59,11 +57,6 @@ const ImageCarousel = () => {
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full"
-            style={{
-              height: '800px',  // Set a fixed height
-              objectFit: 'cover', // Ensures image covers the entire container while maintaining aspect ratio
-              flex: '0 0 100%',
-            }}
           />
         ))}
       </div>
@@ -98,4 +91,4 @@ const ImageCarousel = () => {
   );
 };
 
-export default ImageCarousel;
+export default ImageCarousel5;

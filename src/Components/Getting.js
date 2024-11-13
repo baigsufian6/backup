@@ -3,24 +3,23 @@ import './Getting.css';
 
 const GoogleMapsReviewsDisplay = () => {
   const [reviews, setReviews] = useState([]);
-  const placeId = 'ChIJw1AoeQA9rjsREUtQj8DgfGM'; // Your Place ID for Google Maps
-  const apiKey = 'AIzaSyA1qO--GesR7VguLZy7TU7v8RwDdCtpP64'; // Your Google Maps API Key
+  const placeId = 'ChIJw1AoeQA9rjsREUtQj8DgfGM';
+  const apiKey = 'AIzaSyA1qO--GesR7VguLZy7TU7v8RwDdCtpP64';
   const [lastFetchedReviewCount, setLastFetchedReviewCount] = useState(0);
 
   const fetchReviews = useCallback(async () => {
+    if (!apiKey) {
+      console.error("API Key is undefined. Please ensure it's correctly set.");
+      return;
+    }
     try {
       const response = await fetch(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating&key=${apiKey}`)}`
+        `https://your-server-domain.com/proxy?place_id=${placeId}&key=${apiKey}`
       );
-      const { contents } = await response.json();
-      const data = JSON.parse(contents); // Parse the proxied content
-
-      // Log the entire data to see what you're getting
-      console.log(data);
+      const data = await response.json();
 
       if (data.result && data.result.reviews) {
-        const latestReviews = data.result.reviews.slice(0, 3); // Get top 6 reviews
-        console.log("Latest Reviews Count:", latestReviews.length); // Log the count of latest reviews
+        const latestReviews = data.result.reviews.slice(0, 3);
         setReviews(latestReviews);
         setLastFetchedReviewCount(latestReviews.length);
       } else {
@@ -32,20 +31,15 @@ const GoogleMapsReviewsDisplay = () => {
   }, [placeId, apiKey]);
 
   useEffect(() => {
-    // Fetch reviews on component mount
     fetchReviews();
   }, [fetchReviews]);
 
   const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span key={i} className={i <= rating ? 'filled-star' : 'empty-star'}>
-          ⭐
-        </span>
-      );
-    }
-    return stars;
+    return Array.from({ length: 5 }, (_, i) => (
+      <span key={i} className={i < rating ? 'filled-star' : 'empty-star'}>
+        ⭐
+      </span>
+    ));
   };
 
   return (
@@ -58,13 +52,11 @@ const GoogleMapsReviewsDisplay = () => {
               <div className="review-header">
                 <div className="review-author">
                   <img
-                    src={review.profile_photo_url
-                      ? `https://api.allorigins.win/raw?url=${encodeURIComponent(review.profile_photo_url)}`
-                      : `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name)}&background=random&size=40&bold=true`}
+                    src={review.profile_photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name)}`}
                     alt={review.author_name}
                     className="review-avatar"
                     onError={(e) => {
-                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name)}&background=random&size=40&bold=true`;
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name)}`;
                     }}
                   />
                   <span className="author-name">{review.author_name}</span>

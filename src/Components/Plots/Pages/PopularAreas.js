@@ -34,7 +34,7 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area1})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/sulta')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/InnerPage1')}  // Ensure this route exists
                         >
                             <div className="overlay">
                                 <span className="overlay-text">Click to View</span>
@@ -47,7 +47,7 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area2})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/sultan')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/InnerPage2')}  // Ensure this route exists
                         >
                             <div className="overlay">
                                 <span className="overlay-text">Click to View</span>
@@ -60,7 +60,20 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area3})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/sultana')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/InnerPage3')}  // Ensure this route exists
+                        >
+                            <div className="overlay">
+                                <span className="overlay-text">Click to View</span>
+                            </div>
+                        </div>
+
+                        {/* Area Card 4 */}
+                        <div 
+                            data-aos="zoom-in" 
+                            data-aos-delay="400" 
+                            style={{ backgroundImage: `url(${area4})` }}
+                            className="area-card"
+                            onClick={() => navigate('/plots/InnerPage4')}  // Ensure this route exists
                         >
                             <div className="overlay">
                                 <span className="overlay-text">Click to View</span>
@@ -68,6 +81,7 @@ const PopularAreas = () => {
                         </div>
                     </div>
                 </div>
+                
                 <div id="bottom" className="popular-areas-stats">
                     <div data-aos="slide-up" data-aos-delay="200" className="stat-box">
                         <h1 className="stat-number">52+</h1>
