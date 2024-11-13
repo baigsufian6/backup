@@ -25,13 +25,12 @@ const PopularAreas = () => {
             <section className="popular-areas-section">
                 <div id="top" className="popular-areas-top">
                     <div className="bolo">
-                        <h1 data-aos="zoom-in" className="popular-areas-title">LATEST PROJECTS</h1>
+                        <h1  className="popular-areas-title">LATEST PROJECTS</h1>
                     </div>
                     <div className="popular-areas-grid">
                         {/* Area Card 1 */}
                         <div 
-                            data-aos="zoom-in" 
-                            data-aos-delay="400" 
+                             
                             style={{ backgroundImage: `url(${area1})` }}
                             className="area-card"
                             onClick={() => navigate('/plots/InnerPage1')}  // Ensure this route exists
@@ -43,8 +42,7 @@ const PopularAreas = () => {
                         
                         {/* Area Card 2 */}
                         <div 
-                            data-aos="zoom-in" 
-                            data-aos-delay="400" 
+                             
                             style={{ backgroundImage: `url(${area2})` }}
                             className="area-card"
                             onClick={() => navigate('/plots/InnerPage2')}  // Ensure this route exists
@@ -56,8 +54,7 @@ const PopularAreas = () => {
                         
                         {/* Area Card 3 */}
                         <div 
-                            data-aos="zoom-in" 
-                            data-aos-delay="400" 
+                             
                             style={{ backgroundImage: `url(${area3})` }}
                             className="area-card"
                             onClick={() => navigate('/plots/InnerPage3')}  // Ensure this route exists
@@ -69,8 +66,7 @@ const PopularAreas = () => {
 
                         {/* Area Card 4 */}
                         <div 
-                            data-aos="zoom-in" 
-                            data-aos-delay="400" 
+                             
                             style={{ backgroundImage: `url(${area4})` }}
                             className="area-card"
                             onClick={() => navigate('/plots/InnerPage4')}  // Ensure this route exists

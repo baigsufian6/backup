@@ -13,6 +13,7 @@ import video from './images/vids2.mp4';
 import rename from './images/rename.jpg'
 import ChatBot from './Chatbot';  // Ensure this path is correct
 import GoogleReviews from './Getting';
+import PopularAreas from './Plots/Pages/PopularAreas';
 import './Main.css';
 
 // ServiceCard component
@@ -300,6 +301,8 @@ const Home = React.memo(() => {
           <div className="xpat-company-image"></div>
         </div>
       </section>
+
+      <PopularAreas />
 
       {/* Services Section */}
       <section className="xpat-services" id="services">
